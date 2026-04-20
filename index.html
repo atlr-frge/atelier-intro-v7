@@ -138,15 +138,8 @@ a { color: inherit; text-decoration: none; }
 .hero-inner {
   max-width: var(--max-w); width: 100%; margin: 0 auto;
   position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: center;
+  max-width: 680px;
 }
-.hero-terminal-wrap {
-  opacity: 0; transform: translateY(20px);
-  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s,
-              transform 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s;
-}
-.hero-terminal-wrap.loaded { opacity: 1; transform: translateY(0); }
 .hero-eyebrow {
   font-family: var(--font-mono);
   font-size: 0.62rem; font-weight: 400;
@@ -526,8 +519,6 @@ a { color: inherit; text-decoration: none; }
   .nav-links { display: none; }
   .nav-cta { padding: 0.45rem 0.9rem; font-size: 0.72rem; }
   .hero { padding: 5.5rem var(--pad-x) 4rem; min-height: auto; }
-  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .hero-terminal-wrap { display: none; }
   .arch-section { padding: 4.5rem var(--pad-x); }
   .gryphon-section { padding: 5rem var(--pad-x); }
   .gryphon-hdr { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -665,7 +656,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-bg-overlay {
   position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(110deg, rgba(10,10,10,0.80) 35%, rgba(10,10,10,0.25) 100%);
+  background: radial-gradient(ellipse at 60% 50%, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.82) 70%);
   z-index: 0;
 }
 
@@ -741,29 +732,18 @@ a { color: inherit; text-decoration: none; }
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-bg-overlay" aria-hidden="true"></div>
   <div class="hero-inner">
-    <div>
-      <span class="hero-eyebrow reveal">Bespoke Agentic Systems</span>
-      <h1 class="hero-title reveal">
-        Your AI problem<br>
-        <em>isn&rsquo;t AI.</em>
-      </h1>
-      <div class="hero-rule reveal"></div>
-      <p class="hero-sub reveal">
-        Every organization has access to the same models, and the gap is between that raw capability and <strong>a system that actually runs your business.</strong>
-      </p>
-      <div class="hero-ctas reveal">
-        <a href="#pain" class="btn-primary">See the real problem &darr;</a>
-        <a href="#contact" class="btn-ghost">Start with a Sprint &rarr;</a>
-      </div>
-    </div>
-    <div class="hero-terminal-wrap" id="hero-terminal-wrap">
-      <div class="terminal-block">
-        <div class="terminal-bar">
-          <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
-          <span class="terminal-title-bar">ATELIER / COMPLIANCE AGENT</span>
-        </div>
-        <div class="terminal-body" id="hero-terminal-output"></div>
-      </div>
+    <span class="hero-eyebrow reveal">Bespoke Agentic Systems</span>
+    <h1 class="hero-title reveal">
+      Your AI problem<br>
+      <em>isn&rsquo;t AI.</em>
+    </h1>
+    <div class="hero-rule reveal"></div>
+    <p class="hero-sub reveal">
+      Every organization has access to the same models, and the gap is between that raw capability and <strong>a system that actually runs your business.</strong>
+    </p>
+    <div class="hero-ctas reveal">
+      <a href="#pain" class="btn-primary">See the real problem &darr;</a>
+      <a href="#contact" class="btn-ghost">Start with a Sprint &rarr;</a>
     </div>
   </div>
 </section>
