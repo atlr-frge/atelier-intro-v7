@@ -373,8 +373,16 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-lifted);
   padding: 5rem var(--pad-x);
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
 }
-.forge-inner { max-width: var(--max-w); margin: 0 auto; }
+.forge-section::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('images/bg-vortex-hires.jpg');
+  background-size: cover; background-position: center center;
+  opacity: 0.12; z-index: 0;
+}
+.forge-inner { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 1; }
 .forge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
 .forge-card {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
